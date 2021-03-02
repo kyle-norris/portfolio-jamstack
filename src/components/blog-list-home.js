@@ -1,1 +1,1 @@
-[object, Promise]
+[object Promise]
