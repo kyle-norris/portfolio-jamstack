@@ -4,9 +4,9 @@
     "titleTemplate": "%s",
     "description": "A portfolio and blog to showcase the work of Kyle Norris.",
     "siteUrl": "https://www.projectkyle.com",
-    "image": "/assets/stackrole.png",
-    "iconimage": "/assets/stackrole.png",
-    "twitterUsername": "@stackrole"
+    "image": "/assets/20.svg",
+    "iconimage": "/assets/20.svg",
+    "twitterUsername": ""
   },
   "ga": "UA-XXXXXXXXX-X"
 }
