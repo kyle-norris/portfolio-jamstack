@@ -45,7 +45,6 @@ const HomePage = ({ data }) => {
         <div>
           <h1 class="title">{frontmatter.title}</h1>
           <p class="tagline">{frontmatter.tagline}</p>
-          <div className="description" dangerouslySetInnerHTML={{__html: html}}/>
           <Link to={frontmatter.cta.ctaLink} className="button">{frontmatter.cta.ctaText}<span class="icon -right"><RiArrowRightSLine/></span></Link>
         </div>
         <div>
