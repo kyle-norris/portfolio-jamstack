@@ -264,7 +264,7 @@ article img {
 	border-radius: 12px;
 	text-decoration: none;
 	appearance: none;
-	border: none;
+	border: solid 2px var( --button-color);
 	font-size: inherit;
 	line-height: 1;
 	transition: background .3s linear;
