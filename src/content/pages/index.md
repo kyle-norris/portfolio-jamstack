@@ -2,7 +2,7 @@
 template: index-page
 slug: /
 title: Kyle Norris
-tagline: Web Developer
+tagline: Front-End Web Developer
 featuredImage: /assets/toa-heftiba-0rlfirsdvzu-unsplash.jpg
 cta:
   ctaText: Know more
