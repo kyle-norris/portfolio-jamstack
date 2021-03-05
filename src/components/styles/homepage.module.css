@@ -1,0 +1,48 @@
+.featuredImage {
+  height: auto;
+  width: 500px;
+  object-fit: contain;
+  opacity: 30%;
+}
+
+
+.title {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 900;
+  color: white;
+}
+
+.tagline {
+  font-size: 24px;
+  margin-top: 2px;
+  color: white;
+}
+
+.fullScreenCenter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleContainer {
+  z-index: 500;
+  composes: fullScreenCenter;
+}
+
+.imageContainer {
+  z-index: 100;
+  composes: fullScreenCenter;
+}
+
+.pageContainer {
+  height: 100vh;
+  width: 100%;
+  background: #40252C;
+}

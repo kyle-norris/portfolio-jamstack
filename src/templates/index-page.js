@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import { RiArrowRightSLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import SEO from "../components/seo"
+import * as styles from "../components/styles/homepage.module.css"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!){
@@ -17,7 +17,7 @@ export const pageQuery = graphql`
         tagline
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 480, maxHeight: 380, quality: 80, srcSetBreakpoints: [960, 1440]) {
+            fluid(maxWidth: 480, maxHeight: 480, quality: 80, srcSetBreakpoints: [960, 1440]) {
               ...GatsbyImageSharpFluid
             }
             sizes {
@@ -41,19 +41,17 @@ const HomePage = ({ data }) => {
 	return (
 		<Layout>
       <SEO/>
-      <div className="home-banner grids col-1 sm-2">
-        <div>
-          <h1 class="title">{frontmatter.title}</h1>
-          <p class="tagline">{frontmatter.tagline}</p>
-          <div className="description" dangerouslySetInnerHTML={{__html: html}}/>
-          <Link to={frontmatter.cta.ctaLink} className="button">{frontmatter.cta.ctaText}<span class="icon -right"><RiArrowRightSLine/></span></Link>
+      <div className={styles.pageContainer}>
+        <div className={styles.titleContainer}>
+          <h1 className={styles.title}>{frontmatter.title}</h1>
+          <p className={styles.tagline}>{frontmatter.tagline}</p>
         </div>
-        <div>
+        <div className={styles.imageContainer}>
           {Image ? (
             <Img 
               fluid={Image} 
               alt={frontmatter.title + ' - Featured image'}
-              className="featured-image"
+              className={styles.featuredImage}
             />
           ) : ""}
         </div>

@@ -8,28 +8,15 @@ import Navigation from "./navigation";
 import "../assets/scss/style.scss"
 import Footer from "./footer";
 
-const query = graphql`
-query LayoutQuery {
-  site {
-    siteMetadata {
-      siteTitle: title
-    }
-  }
-}
-`
 
 const Layout = ({children, className}) => {
 
-  const { site } = useStaticQuery(query)
-  const { siteTitle } = site.siteMetadata
-
   return (
-    <div className="primary-container">
+    <div>
       <Header>
-        <Logo title={siteTitle} />
         <Navigation/>
       </Header>
-      <main className={"container " + className}>
+      <main>
         {children}
       </main>
       <Footer/>
