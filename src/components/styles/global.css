@@ -1,0 +1,30 @@
+@import './vars.css';
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: var(--font-family-secondary);
+	font-size: 18px;
+}
+code {
+	font-family: var(--font-family-code);
+} 
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+a:hover {
+  color: var(--link-color-hover);
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}

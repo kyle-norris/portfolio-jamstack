@@ -1,57 +1,89 @@
 import React from "react"
 import { Link } from "gatsby"
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import { IconContext } from "react-icons"
+import { CgMenuRightAlt, CgClose } from "react-icons/cg"
+import * as styles from "../components/styles/navigation.module.css"
+import classNames from "classnames/bind"
+
+let cx = classNames.bind(styles)
 
 const MenuItems = [
   {
     path: "/",
-    title: "Home"
+    title: "Home",
   },
   {
     path: "/projects",
-    title: "Projects"
+    title: "Projects",
   },
   {
     path: "/blog",
-    title: "Blog"
+    title: "Blog",
   },
   {
     path: "/contact",
-    title: "Contact"
+    title: "Contact",
   },
 ]
 
-const ListLink = (props) => (<li><Link to={props.to}>{props.children}</Link></li>)
-
+const ListLink = props => (
+  <li>
+    <Link to={props.to}>{props.children}</Link>
+  </li>
+)
 
 class Navigation extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {showMenu: false}
+    this.state = { showMenu: false }
 
-    this.handleToggleClick = this.handleToggleClick.bind(this);
+    this.handleToggleClick = this.handleToggleClick.bind(this)
   }
 
   handleToggleClick() {
-    this.setState(state => ({      
-      showMenu: !state.showMenu    
+    this.setState(state => ({
+      showMenu: !state.showMenu,
     }))
   }
 
-  render () {
-    const listMenuItems = MenuItems.map((menuItem, index) => 
-      <ListLink key={index} to={menuItem.path}>{menuItem.title}</ListLink>
-    )
+  render() {
+    const listMenuItems = MenuItems.map((menuItem, index) => (
+      <ListLink key={index} to={menuItem.path}>
+        {menuItem.title}
+      </ListLink>
+    ))
+
+    let toggleBtnClass = cx({
+      menu_trigger: true,
+      active: this.state.showMenu,
+    })
+
+    let drawerClass = cx({
+      drawer: true,
+      active: this.state.showMenu,
+    })
+
     return (
-      <nav className="site-navigation">
-        <button onClick={this.handleToggleClick} className={"menu-trigger" + (this.state.showMenu ? " is-active" : "")}>
-          <div className="icon-menu-line"><RiMenu3Line/></div>
-          <div className="icon-menu-close"><RiCloseLine/></div>
-        </button>
-        <ul>
-          {listMenuItems}
-        </ul>
-      </nav>
+      <IconContext.Provider
+        value={{
+          color: "white",
+          size: "2rem",
+        }}
+      >
+        <nav className={styles.container}>
+          <button onClick={this.handleToggleClick} className={toggleBtnClass}>
+            <div className={styles.icon_menu}>
+              <CgMenuRightAlt />
+            </div>
+            <div className={styles.icon_close}>
+              <CgClose />
+            </div>
+          </button>
+          <div className={drawerClass}>
+            <ul className={styles.nav_list}>{listMenuItems}</ul>
+          </div>
+        </nav>
+      </IconContext.Provider>
     )
   }
 }
