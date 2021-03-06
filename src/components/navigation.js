@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { IconContext } from "react-icons"
 import { CgMenuRightAlt, CgClose } from "react-icons/cg"
-import * as styles from "../components/styles/navigation.module.css"
+import * as styles from "../components/styles/navigation.module.scss"
 import classNames from "classnames/bind"
 
 let cx = classNames.bind(styles)

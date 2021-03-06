@@ -1,26 +1,50 @@
-@import './vars.css';
+@import './vars.scss';
 
 .featuredImage {
   height: auto;
-  width: 32rem;
+  width: 70%;
   object-fit: contain;
   opacity: 30%;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    width: 30rem;
+  }
 }
 
 
 .title {
-  font-size: 8rem;
+  font-size: 2.5rem;
   font-weight: 900;
   color: var(--title-color);
   font-family: 'Kaushan Script';
   margin: 0;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    font-size: 4rem;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 5rem;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 6.5rem;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    font-size: 8rem;
+  }
 }
 
 .tagline {
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: var(--title-color);
   margin: 0;
   font-family: 'Kaushan Script';
+
+  @media screen and (min-width: $breakpoint-sm) {
+    font-size: 2rem;
+  }
 }
 
 .fullScreenCenter {
@@ -37,12 +61,12 @@
 
 .titleContainer {
   z-index: 500;
-  composes: fullScreenCenter;
+  @extend .fullScreenCenter;
 }
 
 .imageContainer {
   z-index: 100;
-  composes: fullScreenCenter;
+  @extend .fullScreenCenter;
 }
 
 .pageContainer {

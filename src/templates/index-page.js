@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import SEO from "../components/seo"
-import * as styles from "../components/styles/homepage.module.css"
+import * as styles from "../components/styles/homepage.module.scss"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!){
