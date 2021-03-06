@@ -28,7 +28,9 @@ const MenuItems = [
 
 const ListLink = props => (
   <li>
-    <Link to={props.to}>{props.children}</Link>
+    <Link to={props.to} className={styles.link} onClick={props.click}>
+      <div className={styles.link_clickarea}>{props.children}</div>
+    </Link>
   </li>
 )
 
@@ -48,7 +50,7 @@ class Navigation extends React.Component {
 
   render() {
     const listMenuItems = MenuItems.map((menuItem, index) => (
-      <ListLink key={index} to={menuItem.path}>
+      <ListLink key={index} to={menuItem.path} click={this.handleToggleClick}>
         {menuItem.title}
       </ListLink>
     ))
@@ -60,6 +62,11 @@ class Navigation extends React.Component {
 
     let drawerClass = cx({
       drawer: true,
+      active: this.state.showMenu,
+    })
+
+    let overlayClass = cx({
+      overlay: true,
       active: this.state.showMenu,
     })
 
@@ -83,6 +90,7 @@ class Navigation extends React.Component {
             <ul className={styles.nav_list}>{listMenuItems}</ul>
           </div>
         </nav>
+        <div className={overlayClass} onClick={this.handleToggleClick}></div>
       </IconContext.Provider>
     )
   }

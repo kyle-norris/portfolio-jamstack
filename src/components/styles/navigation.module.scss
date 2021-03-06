@@ -36,11 +36,17 @@
 .drawer {
   position: fixed;
   top: 0;
-  right: 100%;
+  right: -100vw;
   background: var(--nav-drawer-color);
   height: 100vh;
-  width: 15rem;
+  width: 100%;
   z-index: 900;
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    width: 13rem;
+    right: -13rem;
+  }
 }
 
 .drawer.active {
@@ -58,13 +64,47 @@
 .nav_list li {
   width: 100%;
   text-align: center;
-  height: 2rem;
+  height: 4rem;
+  transition: all 0.2s ease-in-out;
+
+  .link {
+    line-height: 4rem;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    background: var(--link-bg-hover);
+    
+    a {
+      color: var(--link-color-hover);
+    }
+  
+  }
+
+  @media screen and (min-width: $breakpoint-sm) {
+    height: 3rem;
+    
+    .link {
+      line-height: 3rem;
+      font-size: 1.3rem;
+
+    }
+    
+  }
 }
 
-.nav_list li:hover {
-  background: var(--link-bg-hover);
-}
 
-.nav_list li:hover a{
-  color: var(--link-color-hover);
+.overlay {
+  background-color: rgba(49, 49, 49, 0);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -100;
+  transition: all 0.2s ease-in-out;
+
+  &.active {
+    background-color: rgba(24, 24, 24, 0.548);
+    z-index: 800;
+  }
 }
