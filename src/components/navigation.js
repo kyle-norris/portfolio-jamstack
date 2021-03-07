@@ -77,7 +77,7 @@ class Navigation extends React.Component {
           size: "2rem",
         }}
       >
-        <nav className={styles.container}>
+        <nav>
           <button onClick={this.handleToggleClick} className={toggleBtnClass}>
             <div className={styles.icon_menu}>
               <CgMenuRightAlt />
@@ -87,10 +87,11 @@ class Navigation extends React.Component {
             </div>
           </button>
           <div className={drawerClass}>
-            <ul className={styles.nav_list}>{listMenuItems}</ul>
-          </div>
-        </nav>
+          <ul className={styles.nav_list}>{listMenuItems}</ul>
+        </div>
         <div className={overlayClass} onClick={this.handleToggleClick}></div>
+        </nav>
+        
       </IconContext.Provider>
     )
   }

@@ -4,19 +4,26 @@ import { RiArrowDownLine, RiArrowRightSLine } from "react-icons/ri"
 
 import PostCard from "./post-card"
 
+import * as styles from "../components/styles/projectlisthome.module.scss"
+
 const PostMaker = ({ data }) => (
-  <section className="home-posts">
-    <h2>Latest <strong>Projects</strong> <span class="icon -right"><RiArrowDownLine/></span></h2>
-    <div className="grids col-1 sm-2 lg-3">
-      {data}
+  <section className={styles.section}>
+    <div className={styles.container}>
+      <h2 className={styles.section_title}>Latest Projects:</h2>
+      <div className="grids col-1 sm-2 lg-3">{data}</div>
+      <Link className="button" to="/projects">
+        See more
+        <span class="icon -right">
+          <RiArrowRightSLine />
+        </span>
+      </Link>
     </div>
-    <Link className="button" to="/projects">See more<span class="icon -right"><RiArrowRightSLine/></span></Link>
   </section>
 )
 
 export default function BlogListHome() {
   return (
-    <StaticQuery 
+    <StaticQuery
       query={graphql`
         query {
           allMarkdownRemark(
@@ -44,18 +51,14 @@ export default function BlogListHome() {
               }
             }
           }
-        }`
-      }
-
-      render={ data => {
-          const posts = data.allMarkdownRemark.edges
-            .filter(edge => !!edge.node.frontmatter.date)
-            .map(edge =>
-              <PostCard key={edge.node.id} data={edge.node} />
-          )
-          return <PostMaker data={posts} />
-        } 
-      }
+        }
+      `}
+      render={data => {
+        const posts = data.allMarkdownRemark.edges
+          .filter(edge => !!edge.node.frontmatter.date)
+          .map(edge => <PostCard key={edge.node.id} data={edge.node} />)
+        return <PostMaker data={posts} />
+      }}
     />
   )
 }

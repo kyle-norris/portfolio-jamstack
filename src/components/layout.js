@@ -13,7 +13,7 @@ import Footer from "./footer";
 const Layout = ({children, className}) => {
 
   return (
-    <div>
+    <>
       <Header>
         <Navigation/>
       </Header>
@@ -21,7 +21,7 @@ const Layout = ({children, className}) => {
         {children}
       </main>
       <Footer/>
-    </div>
+    </>
   )
 }
 

@@ -1,0 +1,21 @@
+@import './vars.scss';
+
+.section {
+  background-color: var(--accent-color);
+  margin: 0;
+
+  .container {
+    margin: auto;
+    padding-top: 4rem;
+    width: 70%;
+
+    .section_title {
+      margin-bottom: 2rem;
+      margin-top: 0;
+      color: var(--projects-title-color);
+    }
+  }
+
+}
+
+
