@@ -7,18 +7,16 @@ import PostCard from "./post-card"
 import * as styles from "../components/styles/projectlisthome.module.scss"
 
 const PostMaker = ({ data }) => (
-  <section className={styles.section}>
-    <div className={styles.container}>
-      <h2 className={styles.section_title}>Latest Projects:</h2>
-      <div className="grids col-1 sm-2 lg-3">{data}</div>
-      <Link className="button" to="/projects">
-        See more
-        <span class="icon -right">
-          <RiArrowRightSLine />
-        </span>
+  <>
+    <section className={styles.section}>
+      <h2 className={styles.section_title}>FEATURED PROJECTS</h2>
+      <div className={styles.grid}>{data}</div>
+      <Link className={styles.button_more} to="/projects">
+        MORE
+        <RiArrowRightSLine className={styles.arrow} />
       </Link>
-    </div>
-  </section>
+    </section>
+  </>
 )
 
 export default function BlogListHome() {
@@ -29,7 +27,7 @@ export default function BlogListHome() {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
             filter: { frontmatter: { template: { eq: "blog-post" } } }
-            limit: 6
+            limit: 3
           ) {
             edges {
               node {

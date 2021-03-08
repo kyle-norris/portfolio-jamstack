@@ -6,19 +6,20 @@ $breakpoint-xl: 1200px;
 :root {
 
   /* Global Styles */
-  --font-family-primary: 'Kaushan Script';
-  --font-family-secondary: 'sans-serif';
+  --font-family-primary: 'Hey August';
+  --font-family-secondary: 'Roboto';
   --font-family-code: 'Roboto Mono';
 
   --link-color: white;
   --link-color-hover: grey;
   --link-bg-hover: white;
-  --nav-drawer-color: #75241e;
-  --header-color: rgb(74, 90, 126);
+  --nav-drawer-color: #4A596A;
+  --header-color: #3F454D;
+
 
   /* Home Page Variables */
-  --title-color: white;
-  --background-color: #351c23;
-  --accent-color: rgb(92, 92, 92);
+  --title-color: #042C35;
+  --background-color: #FAFCFC;
+  --accent-color: #665D94;
   --projects-title-color: #fff;
 }

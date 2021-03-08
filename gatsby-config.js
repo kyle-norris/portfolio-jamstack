@@ -93,7 +93,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ['Kaushan Script', 'Roboto Mono']
+          families: ['Kaushan Script', 'Roboto Mono', 'Roboto']
         }
       }
     },

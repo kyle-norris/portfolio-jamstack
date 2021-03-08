@@ -4,7 +4,8 @@
   height: auto;
   width: 70%;
   object-fit: contain;
-  opacity: 30%;
+  margin: 5rem auto 0 auto;
+  z-index: 500;
 
   @media screen and (min-width: $breakpoint-sm) {
     width: 30rem;
@@ -16,8 +17,8 @@
   font-size: 2.5rem;
   font-weight: 900;
   color: var(--title-color);
-  font-family: 'Kaushan Script';
-  margin: 0;
+  font-family: var(--font-family-primary);
+  margin: 5rem 0 0 0;
 
   @media screen and (min-width: $breakpoint-sm) {
     font-size: 4rem;
@@ -40,43 +41,31 @@
   font-size: 1.2rem;
   color: var(--title-color);
   margin: 0;
-  font-family: 'Kaushan Script';
+  font-family: var(--font-family-primary);
 
   @media screen and (min-width: $breakpoint-sm) {
     font-size: 2rem;
   }
 }
 
-.fullScreenCenter {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.titleContainer {
-  z-index: 500;
-  @extend .fullScreenCenter;
-}
-
-.imageContainer {
-  z-index: 100;
-  @extend .fullScreenCenter;
-}
-
-.pageContainer {
-  height: 100vh;
+.container_page {
   width: 100%;
   background: var(--background-color);
 }
 
-.down_arrow {
+.container_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background_splash {
+  background-color: #D0E0E4;
+  height: 80rem;
+  width: 100%;
   position: absolute;
-  bottom: 2rem;
-  cursor: pointer;
+  top: 35rem;
+  z-index: 1;
+  transform: skewY(7deg)
 }

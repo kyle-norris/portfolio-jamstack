@@ -73,7 +73,7 @@ class Navigation extends React.Component {
     return (
       <IconContext.Provider
         value={{
-          color: "white",
+          color: "#042C35",
           size: "2rem",
         }}
       >

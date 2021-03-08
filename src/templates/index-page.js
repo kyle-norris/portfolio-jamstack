@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import BlogListHome from "../components/project-list-home"
+import ProjectListHome from "../components/project-list-home"
 import SEO from "../components/seo"
 import * as styles from "../components/styles/homepage.module.scss"
 import { CgChevronDown } from "react-icons/cg"
@@ -57,29 +57,25 @@ const HomePage = ({ data }) => {
     >
       <Layout>
         <SEO />
-        <div className={styles.pageContainer}>
-          <div className={styles.titleContainer}>
+        <div className={styles.container_page}>
+          <div className={styles.container_title}>
             <h1 className={styles.title}>{frontmatter.title}</h1>
             <p className={styles.tagline}>{frontmatter.tagline}</p>
-            <CgChevronDown
-              className={styles.down_arrow}
-              onClick={() => scrollTo("#projects")}
+          </div>
+          {Image ? (
+            <Img
+              fluid={Image}
+              alt={frontmatter.title + " - Featured image"}
+              className={styles.featuredImage}
             />
+          ) : (
+            ""
+          )}
+          
+          <div id="projects">
+            <ProjectListHome />
           </div>
-          <div className={styles.imageContainer}>
-            {Image ? (
-              <Img
-                fluid={Image}
-                alt={frontmatter.title + " - Featured image"}
-                className={styles.featuredImage}
-              />
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
-        <div id="projects">
-          <BlogListHome />
+          <div className={styles.background_splash}></div>
         </div>
       </Layout>
     </IconContext.Provider>
