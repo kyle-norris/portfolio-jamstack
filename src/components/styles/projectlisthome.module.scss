@@ -1,8 +1,14 @@
+@import './vars.scss';
+
 .section {
   margin: 5rem auto 0 auto;
   z-index: 100;
   position: relative;
-  width: 70%;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-xl) {
+    width: 70%;
+  }
 
     .section_title {
       margin-bottom: 5rem;
@@ -15,8 +21,12 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: 2rem;
+
+      @media screen and (min-width: $breakpoint-xl) {
+        grid-template-columns: repeat(3, 1fr);
+      }
       
     }
 

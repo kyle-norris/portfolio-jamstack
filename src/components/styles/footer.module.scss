@@ -1,0 +1,35 @@
+@import './vars.scss';
+
+.footer {
+  position: static;
+  margin-top: 40rem;
+  background-color: #0E3C47;
+  height: 5rem;
+
+}
+
+.content {
+  margin: 0 auto 0 auto;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_container {
+  width: 2rem;
+  height: 2rem;
+
+  .icon {
+    cursor: pointer;
+    fill: #FAFCFC;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      fill: #D0E0E4;
+    }
+  }
+
+}
