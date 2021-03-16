@@ -4,10 +4,10 @@
   margin: 5rem auto 0 auto;
   z-index: 100;
   position: relative;
-  width: 100%;
+  max-width: 100%;
 
   @media screen and (min-width: $breakpoint-xl) {
-    width: 70%;
+    max-width: 70rem;
   }
 
     .section_title {

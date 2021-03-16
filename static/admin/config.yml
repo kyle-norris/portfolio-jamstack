@@ -9,7 +9,7 @@ backend:
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
 # Uncomment local_backend when you need to develop in your local
-#local_backend: true # run npx netlify-cms-proxy-server for local testing
+local_backend: true # run npx netlify-cms-proxy-server for local testing
 
 media_folder: "static/assets" 
 public_folder: "/assets" 
@@ -42,6 +42,38 @@ collections:
           name: 'featuredImage',
           widget: 'image',
           required: false,
+          tagname: ''
+        }
+
+      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+
+  - name: 'projects'
+    label: 'Projects' # Used in the UI
+    label_singular: 'Project' # Used in the UI, ie: "New Post"
+    description: >
+      Show off your work.
+    folder: 'src/content/projects'
+    slug: '{{slug}}'
+    summary: '{{title}} — {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Template', name: 'template', widget: 'hidden', default: 'project-page'}
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Slug', name: 'slug', widget: 'string', hint: 'Start slug with /. Use only alphanumeric characters, - and _. Avoid spaces in any cases.'}
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          dateFormat: 'YYYY-MM-DD',
+          timeFormat: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - { label: 'SEO Description', name: 'description', widget: 'text' }
+      - {
+          label: 'Featured Image',
+          name: 'featuredImage',
+          widget: 'image',
+          required: true,
           tagname: ''
         }
 
